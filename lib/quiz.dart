@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/resultados.dart';
+import 'data.dart';
 
 class Quiz extends StatefulWidget {
-  const Quiz({super.key});
+  const Quiz({Key? key, this.quiz = const []}) : super(key: key);
+
+  final List quiz;
 
   @override
   State<Quiz> createState() => _QuizState();
@@ -16,21 +19,27 @@ class _QuizState extends State<Quiz> {
 
   @override
   Widget build(BuildContext context) {
-    List quiz = [
-      {
-        "pergunta":
-            "Qual é o nome da pessoa designada pela empresa para garantir a conformidade com a LGPD e atuar como ponto de contato para titulares dos dado?",
-        "respostas": [
-          "Controlador",
-          "Titular",
-          "Encarregado",
-          "Mediador",
-        ],
-        "alternativa_correta": 3,
-      }
-    ];
+    //quiz.shuffle(); // embaralhar a ordem das perguntas
 
-    for (int i = 3; i <= 20; i++) {
+    quiz.forEach((elemento) {
+      int alternativaCorreta = elemento['alternativa_correta'];
+      List respostas = elemento['respostas'];
+
+      String respostaCorreta = elemento['respostas'][alternativaCorreta - 1];
+      //print(respostaCorreta);
+
+      respostas.shuffle();
+      int i = 1;
+      respostas.forEach((elemento) {
+        if (elemento == respostaCorreta) {
+          alternativaCorreta = i;
+        }
+        i++;
+      });
+      elemento['alternativa_correta'] = alternativaCorreta;
+    });
+
+    /* for (int i = 3; i <= 20; i++) {
       quiz.add({
         "pergunta":
             "Em que ano a Lei Geral de Proteção de Dados entrou em vigor no Brasil?",
@@ -134,7 +143,7 @@ class _QuizState extends State<Quiz> {
     print("Dados do Quiz");
     //print(quiz);
     //int perguntaNumero = 2;
-
+*/
     void respondeu(int respostaNumero) {
       setState(() {
         if (quiz[perguntaNumero - 1]['alternativa_correta'] == respostaNumero) {
@@ -186,9 +195,10 @@ class _QuizState extends State<Quiz> {
                   child: Text(quiz[perguntaNumero - 1]['respostas'][0],
                       style: TextStyle(fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(
-                          255, 231, 151, 31), // cor do botão
-                      padding: EdgeInsets.fromLTRB(100, 20, 100, 20)),
+                    backgroundColor:
+                        const Color.fromARGB(255, 231, 151, 31), // cor do botão
+                    padding: EdgeInsets.fromLTRB(100, 20, 100, 20),
+                  ),
                 ),
               ),
               SizedBox(
