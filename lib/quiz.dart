@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/resultados.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key});
@@ -148,7 +149,8 @@ class _QuizState extends State<Quiz> {
 
         if (perguntaNumero == 10) {
           print('Terminou o Quiz');
-          Navigator.pushNamed(context, 'Resultados', arguments: acertos);
+          Navigator.pushNamed(context, 'Resultado',
+              arguments: Argumentos(acertos));
         } else {
           perguntaNumero++;
         }

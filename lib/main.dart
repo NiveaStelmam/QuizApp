@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(initialRoute: 'Homepage', routes: {
       '/': (context) => Homepage(),
       'Quiz': (context) => Quiz(),
-      'Resultados': (context) => Resultado(),
+      Resultado.routeName: (context) => Resultado(),
     });
   }
 }
