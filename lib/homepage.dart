@@ -7,7 +7,8 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFF4A0975), // cor do fundo do app
+        backgroundColor:
+            Colors.white, // cor do fundo do app - Color(0xFF4A0975)
         appBar: AppBar(
           backgroundColor:
               Color.fromARGB(255, 231, 151, 31), // cor da barra de navegação
@@ -23,7 +24,10 @@ class Homepage extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      print('pressionando');
+                      Navigator.pushNamed(context, 'Quiz');
+                    },
                     child: Text('Jogar', style: TextStyle(fontSize: 30)),
                     style: ElevatedButton.styleFrom(
                         backgroundColor:
