@@ -171,8 +171,7 @@ class _QuizState extends State<Quiz> {
         backgroundColor:
             Colors.white, // cor do fundo do app - Color(0xFF4A0975)
         appBar: AppBar(
-          backgroundColor:
-              Color.fromARGB(255, 231, 151, 31), // cor da barra de navegação -
+          backgroundColor: Color(0xFF4A0975), // cor da barra de navegação -
           title: Center(child: Text('Quiz - Legislação e Ética em TI')),
         ),
         body: Padding(
@@ -182,7 +181,7 @@ class _QuizState extends State<Quiz> {
             children: [
               Align(
                   alignment: Alignment.topRight,
-                  child: Text("Pergunta $perguntaNumero de 10")),
+                  child: Text("Questão $perguntaNumero/10")),
               Text("" + quiz[perguntaNumero - 1]['pergunta'],
                   style: TextStyle(fontSize: 20)),
               SizedBox(
@@ -195,8 +194,7 @@ class _QuizState extends State<Quiz> {
                   child: Text(quiz[perguntaNumero - 1]['respostas'][0],
                       style: TextStyle(fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color.fromARGB(255, 231, 151, 31), // cor do botão
+                    backgroundColor: Color(0xFF4A0975), // cor do botão
                     padding: EdgeInsets.fromLTRB(100, 20, 100, 20),
                   ),
                 ),
@@ -211,8 +209,7 @@ class _QuizState extends State<Quiz> {
                   child: Text(quiz[perguntaNumero - 1]['respostas'][1],
                       style: TextStyle(fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromARGB(
-                          255, 231, 151, 31), // cor do botão
+                      backgroundColor: const Color(0xFF4A0975), // cor do botão
                       padding: const EdgeInsets.fromLTRB(100, 20, 100, 20)),
                 ),
               ),
@@ -226,8 +223,7 @@ class _QuizState extends State<Quiz> {
                   child: Text(quiz[perguntaNumero - 1]['respostas'][2],
                       style: TextStyle(fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          Color.fromARGB(255, 231, 151, 31), // cor do botão
+                      backgroundColor: Color(0xFF4A0975), // cor do botão
                       padding: EdgeInsets.fromLTRB(100, 20, 100, 20)),
                 ),
               ),
@@ -241,8 +237,7 @@ class _QuizState extends State<Quiz> {
                   child: Text(quiz[perguntaNumero - 1]['respostas'][3],
                       style: TextStyle(fontSize: 20)),
                   style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          Color.fromARGB(255, 231, 151, 31), // cor do botão
+                      backgroundColor: Color(0xFF4A0975), // cor do botão
                       padding: EdgeInsets.fromLTRB(100, 20, 100, 20)),
                 ),
               ),

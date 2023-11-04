@@ -10,8 +10,7 @@ class Homepage extends StatelessWidget {
         backgroundColor:
             Colors.white, // cor do fundo do app - Color(0xFF4A0975)
         appBar: AppBar(
-          backgroundColor:
-              Color.fromARGB(255, 231, 151, 31), // cor da barra de navegação
+          backgroundColor: Color(0xFF4A0975), // cor da barra de navegação
           title: Center(child: Text('Quiz - Legislação e Ética em TI')),
         ),
         body: Padding(
@@ -20,7 +19,7 @@ class Homepage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Image.asset('assets/images/quiz.png'),
+                Image.asset('assets/images/logo.png'),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -30,8 +29,7 @@ class Homepage extends StatelessWidget {
                     },
                     child: Text('Jogar', style: TextStyle(fontSize: 30)),
                     style: ElevatedButton.styleFrom(
-                        backgroundColor:
-                            Color.fromARGB(255, 231, 151, 31), // cor do botão
+                        backgroundColor: Color(0xFF4A0975), // cor do botão
                         padding: EdgeInsets.fromLTRB(20, 20, 20, 20)),
                   ),
                 )
